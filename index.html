@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="./style.css">
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+		<!-- <script id="MathJax-script" async src="./tex-chtml.js"></script> -->
+		<script src="./script.js" defer></script>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<header>
+			<h1>Potential Divider Circuit Demonstration</h1>
+		</header>
+		<main>
+			<div id="circuit">
+				<div id="arrow"></div>
+				<div id="slider-container">
+					<input type="range" value="0" min="0" max="192" id="slider"/>
+				</div>
+				
+				
+				<div id="emf-cont">
+					<label for="emf-input">\(ε =\)</label>
+					<input type="number" id="emf-input" value="12">
+					V
+				</div>
+				
+				<div id="r-cont">
+					<label for="r-input">\(R_1 =\)</label>
+					<input type="number" id="r-input" value="10">
+					Ω
+				</div>
+		
+				<div id="r2-value">
+					<label for="r-input">\(R_2 =\)</label>
+					<input type="number" id="r2-input" value="0">
+					Ω
+				</div>
+			</div>
+
+			<div id="calculation">
+				<div id="formula">
+					<div>
+						\(V_{out} = {{R_2} \over {R_1+R_2}} \times {V_{in}}\)
+					</div>
+				</div>
+				
+				<div id="working">
+					<div>\(V_{out} = {{0} \over {10+0}} \times {12}\)</div>
+					<div>\(V_{out} = {0} \times {12}\)</div>
+					<div>\(V_{out} = {0}V\)</div>
+
+				</div>
+			</div>
+		</main>
+		<footer>
+			Source code avalable at: <a href=""></a>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+html,body {
+	font-family: 'Cambria Math', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 24px;
+}
+
+
+
+main {
+	display: grid;
+	grid-template-columns: 700px 1fr;
+}
+
+#circuit {
+	background: url("./img/circuit.png");
+	height: 497px;
+	width: 500px;
+	background-repeat: no-repeat;
+	position: relative;
+	margin: 0 100px
+}
+
+#arrow {
+	background: url("./img/arrow.png");
+	width: 147px;
+	height: 23px;
+	position: absolute;
+	bottom: 91px;
+	left: 307px;	
+}
+
+
+#slider {
+	transform: rotate(-90deg);
+    width: 194px;
+    transform-origin: bottom;
+	position: absolute;
+	bottom: 196px;
+	left: 400px;
+}
+
+#emf-input {
+	width: 3.5em;
+}
+
+#r-input, #r2-input {
+	width: 4.5em;
+}
+
+#working > * , #formula > * {
+	padding: 0.5em 0;
+}
+
+#emf-cont {
+	position: absolute;
+	top: 265px;
+	left: -90px;
+}
+
+#r-cont {
+	position: absolute;
+	top: 82px;
+	right: 230px;
+}
+
+#r2-value {
+	position: absolute;
+	top: 282px;
+	right: 230px;
+}
+
+#calculation {
+	margin: 24px;
+	font-size: 30px;
+}
