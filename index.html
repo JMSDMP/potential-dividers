@@ -27,14 +27,14 @@
 				</div>
 				
 				<div id="r-cont">
-					<label for="r-input">\(R_1 =\)</label>
-					<input type="number" id="r-input" value="10">
+					<label for="r-input">\(R_{min} =\)</label>
+					<input type="number" class="rin" id="rmin-input" value="0">
 					Ω
 				</div>
 		
 				<div id="r2-value">
-					<label for="r-input">\(R_2 =\)</label>
-					<input type="number" id="r2-input" value="0">
+					<label for="r-input">\(R_{max} =\)</label>
+					<input type="number" class="rin" id="rmax-input" value="50">
 					Ω
 				</div>
 			</div>
@@ -47,10 +47,13 @@
 					<div>
 						\({V_{in}} = {\displaystyle {\mathcal {E}}}\)
 					</div>
+					<div>
+						\(R_1 = R_{max} - {R_2}\)
+					</div>
 				</div>
 				
 				<div id="working">
-					<div>\(V_{out} = {{0} \over {10+0}} \times {12}\)</div>
+					<div>\(V_{out} = {{0} \over {50+0}} \times {12}\)</div>
 					<div>\(V_{out} = {0} \times {12}\)</div>
 					<div>\(V_{out} = {0}V\)</div>
 

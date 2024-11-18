@@ -4,16 +4,16 @@ let r2Ele = document.getElementById("r2-value");
 let loadingEle = document.getElementById("loading-overlay");
 let workingEle = document.getElementById("working");
 let emfInput = document.getElementById("emf-input");
-let r1Input = document.getElementById("r-input");
-let r2Input = document.getElementById("r2-input");
+let maxInput = document.getElementById("rmax-input");
+let minInput = document.getElementById("rmin-input");
 
-const r2max = 50;
-const r2min = 0;
+var rmax = Number(maxInput.value);
+var rmin = Number(minInput.value);
 
-const r2range = r2max-r2min;
+var rrange = rmax-rmin;
 
-var r1 = Number(r1Input.value);
-var r2 = Number(r2Input.value);
+var r1 = Number(rmax);
+var r2 = Number(rmin);
 var emf = Number(emfInput.value);
 
 updateMaths(true)
@@ -22,39 +22,41 @@ slider.oninput = (ev) => {
 	arrowEle.style.bottom = String(91 + Number(sliderEle.value)) + "px";
 
 	// calc r2
-	r2 = Math.round(r2min + r2range*(slider.value/192)*100)/100;
+	r2 = Math.round(rmin + rrange*(Number(slider.value)/192)*100)/100;
+	r1 = Math.round((rmax - r2)*100)/100
+	//r2Input.value = r2
+	updateMaths()
+	console.log(r1, r2)
+}
 
-	r2Input.value = r2
+maxInput.oninput = (ev) => {
+	rmax = Number(maxInput.value);
+	rrange = rmax-rmin;
+	r2 = Math.round(rmin + rrange*(Number(slider.value)/192)*100)/100;
+	r1 = Math.round((rmax - r2)*100)/100
+
 	updateMaths()
 }
 
-r2Input.oninput = (ev) => {
-	
-	// calc r2
-	r2 = r2Input.value;
-	
-	slider.value = (r2 - r2min)/r2range*192
+minInput.oninput = (ev) => {
+	rmin = Number(minInput.value);
+	rrange = rmax-rmin;
+	r2 = Math.round(rmin + rrange*(Number(slider.value)/192)*100)/100;
+	r1 = Math.round((rmax - r2)*100)/100
 
-	arrowEle.style.bottom = String(91 + Number(sliderEle.value)) + "px";
 	updateMaths()
 }
 
 
 emfInput.oninput = (ev) => {
-	console.log(emfInput.value)
+	//console.log(emfInput.value)
 	emf = Number(emfInput.value);
 	
 	updateMaths()
 }
 
-r1Input.oninput = (ev) => {
-	console.log(r1Input.value)
-	r1 = Number(r1Input.value);
-	
-	updateMaths()
-}
-
 function updateMaths(noupdate = null) {
+	
 	// r2Ele.innerHTML = `\\(R_2 = ${r2} Ω\\)`;
 	
 	workingEle.innerHTML = `<div>\\(V_{out} = {${r2} \\over {${r1}+${r2}}} \\times ${emf}\\)</div>

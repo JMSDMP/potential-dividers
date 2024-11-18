@@ -55,7 +55,7 @@ main {
 	width: 3.5em;
 }
 
-#r-input, #r2-input {
+.rin {
 	width: 4.5em;
 }
 
@@ -71,13 +71,13 @@ main {
 
 #r-cont {
 	position: absolute;
-	top: 82px;
+	top: 374px;
 	right: 230px;
 }
 
 #r2-value {
 	position: absolute;
-	top: 282px;
+	top: 200px;
 	right: 230px;
 }
 
